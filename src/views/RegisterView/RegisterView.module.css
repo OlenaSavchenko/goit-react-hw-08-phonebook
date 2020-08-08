@@ -1,0 +1,9 @@
+.form {
+  width: 320;
+}
+
+.label {
+  display: flex;
+  flexdirection: column;
+  marginbottom: 15;
+}
