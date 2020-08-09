@@ -1,0 +1,1 @@
+{"version":3,"sources":["LoginView.module.css"],"names":[],"mappings":"AAAA,wBACE,aACF,CAEA,uBACE,SAAU,CACV,YAAa,CACb,qBACF","file":"login-page.43dbe0e8.chunk.css","sourcesContent":[".title {\r\n  color: #3f51b5;\r\n}\r\n\r\n.form {\r\n  width: 50%;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n"]}
