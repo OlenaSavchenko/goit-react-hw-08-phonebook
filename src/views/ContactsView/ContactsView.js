@@ -5,7 +5,7 @@ import ContactForm from '../../components/ContactForm';
 import ContactList from '../../components/ContactList';
 import Filter from '../../components/Filter';
 import Container from '../../components/Container';
-import ContactHeader from '../../components/ContactHeader';
+// import ContactHeader from '../../components/ContactHeader';
 
 class ContactsView extends Component {
   static propTypes = {
@@ -20,7 +20,6 @@ class ContactsView extends Component {
   render() {
     return (
       <Container>
-        <ContactHeader />
         <Section title="Add new contact">
           {this.props.isLoadingContacts && <h1>Loading...</h1>}
           <ContactForm />
