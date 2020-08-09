@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import PropTypes from 'prop-types';
 import styles from './LoginView.module.css';
 
 class LoginView extends Component {
+  static propTypes = {
+    onLogin: PropTypes.func.isRequired,
+  };
+
   state = {
     email: '',
     password: '',
@@ -23,34 +30,39 @@ class LoginView extends Component {
     const { email, password } = this.state;
     return (
       <div>
-        <h1>Login</h1>
+        <h1 className={styles.title}>Please, enter your email and password</h1>
 
         <form
           onSubmit={this.handleSubmit}
           className={styles.form}
           autoComplete="off"
         >
-          <label className={styles.label}>
-            Email
-            <input
-              type="email"
-              name="email"
-              value={email}
-              onChange={this.handleChange}
-            />
-          </label>
+          <TextField
+            required
+            id="email"
+            label="Enter your email"
+            defaultValue={email}
+            variant="outlined"
+            type="email"
+            name="email"
+            onChange={this.handleChange}
+            margin="normal"
+          />
+          <TextField
+            required
+            id="password"
+            label="Enter your password"
+            defaultValue={password}
+            variant="outlined"
+            type="password"
+            name="password"
+            onChange={this.handleChange}
+            margin="normal"
+          />
 
-          <label className={styles.label}>
-            Login
-            <input
-              type="password"
-              name="password"
-              value={password}
-              onChange={this.handleChange}
-            />
-          </label>
-
-          <button type="submit">Enter</button>
+          <Button type="submit" fullWidth variant="contained" color="primary">
+            Go to Phonebook
+          </Button>
         </form>
       </div>
     );

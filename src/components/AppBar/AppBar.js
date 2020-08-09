@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Navigation from '../Navigation';
 import UserMenu from '../UserMenu';
 import AuthNav from '../AuthNav';
@@ -11,4 +12,7 @@ const AppBar = ({ isAuthenticated }) => (
   </header>
 );
 
+AppBar.propTypes = {
+  isAuthenticated: PropTypes.bool.isRequired,
+};
 export default AppBar;

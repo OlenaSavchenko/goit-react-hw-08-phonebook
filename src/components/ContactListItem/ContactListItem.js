@@ -1,19 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
+import ListItemText from '@material-ui/core/ListItemText';
 import styles from './ContactListItem.module.css';
 
 const ContactListItem = ({ contact, onDeleteContact }) => {
   const { name, number } = contact;
 
   return (
-    <li className={styles.item}>
-      <span>{name}:</span>
-      <span> {number}</span>
-      <button type="button" onClick={onDeleteContact} className={styles.btn}>
-        Delete
-      </button>
-    </li>
+    <div className={styles.box}>
+      <ListItemText className={styles.item} primary={name} secondary={number} />
+      <br />
+      <IconButton
+        className={styles.button}
+        aria-label="delete"
+        type="button"
+        onClick={onDeleteContact}
+      >
+        <DeleteIcon />
+      </IconButton>
+    </div>
   );
 };
 

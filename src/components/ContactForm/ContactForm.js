@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+import TextField from '@material-ui/core/TextField';
 import styles from './ContactForm.module.css';
 import shortid from 'shortid';
 
@@ -63,30 +66,33 @@ class ContactForm extends Component {
     const { name, number } = this.state;
     return (
       <form onSubmit={this.handleSubmit} className={styles.form}>
-        <label htmlFor={this.nameInputId} className={styles.formLabel}>
-          Name
-          <input
-            type="text"
-            name="name"
-            value={name}
-            onChange={this.handleChange}
-            className={styles.formInput}
-          />
-        </label>
-        <br />
-        <label htmlFor={this.numberInputId} className={styles.formLabel}>
-          Number
-          <input
-            type="tel"
-            name="number"
-            value={number}
-            onChange={this.handleChange}
-            className={styles.formInput}
-          />
-        </label>
-        <button type="submit" className={styles.btn}>
-          Add contact
-        </button>
+        <TextField
+          required
+          id="contact-name"
+          label="Name"
+          variant="filled"
+          type="text"
+          name="name"
+          value={name}
+          onChange={this.handleChange}
+          className={styles.formLabel}
+          autoComplete="off"
+        />
+        <TextField
+          required
+          id="contact-number"
+          label="Number"
+          variant="filled"
+          type="tel"
+          name="number"
+          value={number}
+          onChange={this.handleChange}
+          className={styles.formLabel}
+          autoComplete="off"
+        />
+        <Fab color="primary" aria-label="add" type="submit">
+          <AddIcon />
+        </Fab>
       </form>
     );
   }
